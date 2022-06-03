@@ -16,8 +16,8 @@ namespace My
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmMain1());//程序运行的窗体
-            Application.Run(new FrmAdmin());
+            Application.Run(new FrmMain1());//程序运行的窗体
+            //Application.Run(new FrmAdmin());
 
         }
     }

@@ -64,11 +64,35 @@
     <Compile Include="FrmMain1.Designer.cs">
       <DependentUpon>FrmMain1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmShowScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowScore.Designer.cs">
+      <DependentUpon>FrmShowScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShowStuByGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowStuByGrade.Designer.cs">
+      <DependentUpon>FrmShowStuByGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShowStudentAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowStudentAll.Designer.cs">
+      <DependentUpon>FrmShowStudentAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStudent.Designer.cs">
       <DependentUpon>FrmStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSearchStudent1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSearchStudent1.Designer.cs">
+      <DependentUpon>FrmSearchStudent1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +104,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain1.resx">
       <DependentUpon>FrmMain1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSearchStudent1.resx">
+      <DependentUpon>FrmSearchStudent1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowScore.resx">
+      <DependentUpon>FrmShowScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowStuByGrade.resx">
+      <DependentUpon>FrmShowStuByGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowStudentAll.resx">
+      <DependentUpon>FrmShowStudentAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStudent.resx">
       <DependentUpon>FrmStudent.cs</DependentUpon>

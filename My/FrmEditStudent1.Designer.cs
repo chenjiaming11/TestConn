@@ -177,12 +177,8 @@ namespace My
             // 
             // cboGrade
             // 
+            this.cboGrade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGrade.FormattingEnabled = true;
-            this.cboGrade.Items.AddRange(new object[] {
-            "软件技术2105",
-            "软件技术2106",
-            "软件技术2107",
-            "软件技术2108"});
             this.cboGrade.Location = new System.Drawing.Point(98, 104);
             this.cboGrade.Name = "cboGrade";
             this.cboGrade.Size = new System.Drawing.Size(226, 20);

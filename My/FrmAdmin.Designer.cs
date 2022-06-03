@@ -45,9 +45,9 @@ namespace My
             this.tsAdmin = new System.Windows.Forms.ToolStrip();
             this.tsAddStu = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tsQuueryStuGrade = new System.Windows.Forms.ToolStripButton();
+            this.tsShowSore = new System.Windows.Forms.ToolStripButton();
+            this.txStudentAll = new System.Windows.Forms.ToolStripDropDownButton();
             this.msAdmin.SuspendLayout();
             this.tsAdmin.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +87,7 @@ namespace My
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
             this.退出ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.退出ToolStripMenuItem.Text = "退出";
+            this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
             // 学生用户管理ToolStripMenuItem
             // 
@@ -102,27 +103,30 @@ namespace My
             // tsmiAddstu
             // 
             this.tsmiAddstu.Name = "tsmiAddstu";
-            this.tsmiAddstu.Size = new System.Drawing.Size(180, 22);
+            this.tsmiAddstu.Size = new System.Drawing.Size(148, 22);
             this.tsmiAddstu.Text = "新增学生用户";
             this.tsmiAddstu.Click += new System.EventHandler(this.tsmiAddstu_Click);
             // 
             // 按年级查询ToolStripMenuItem
             // 
             this.按年级查询ToolStripMenuItem.Name = "按年级查询ToolStripMenuItem";
-            this.按年级查询ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.按年级查询ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.按年级查询ToolStripMenuItem.Text = "按姓名查询";
+            this.按年级查询ToolStripMenuItem.Click += new System.EventHandler(this.按年级查询ToolStripMenuItem_Click);
             // 
             // 按年级查询ToolStripMenuItem1
             // 
             this.按年级查询ToolStripMenuItem1.Name = "按年级查询ToolStripMenuItem1";
-            this.按年级查询ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.按年级查询ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.按年级查询ToolStripMenuItem1.Text = "按年级查询";
+            this.按年级查询ToolStripMenuItem1.Click += new System.EventHandler(this.按年级查询ToolStripMenuItem1_Click);
             // 
             // 学生列表ToolStripMenuItem
             // 
             this.学生列表ToolStripMenuItem.Name = "学生列表ToolStripMenuItem";
-            this.学生列表ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.学生列表ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.学生列表ToolStripMenuItem.Text = "学生列表";
+            this.学生列表ToolStripMenuItem.Click += new System.EventHandler(this.学生列表ToolStripMenuItem_Click);
             // 
             // 科目管理ToolStripMenuItem
             // 
@@ -141,15 +145,16 @@ namespace My
             this.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1";
             this.退出ToolStripMenuItem1.Size = new System.Drawing.Size(61, 21);
             this.退出ToolStripMenuItem1.Text = "退出(&H)";
+            this.退出ToolStripMenuItem1.Click += new System.EventHandler(this.退出ToolStripMenuItem1_Click);
             // 
             // tsAdmin
             // 
             this.tsAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsAddStu,
             this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripButton1});
+            this.tsQuueryStuGrade,
+            this.tsShowSore,
+            this.txStudentAll});
             this.tsAdmin.Location = new System.Drawing.Point(0, 25);
             this.tsAdmin.Name = "tsAdmin";
             this.tsAdmin.Size = new System.Drawing.Size(1123, 25);
@@ -172,37 +177,40 @@ namespace My
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(112, 22);
             this.toolStripButton2.Text = "按姓名查询学生";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // toolStripButton3
+            // tsQuueryStuGrade
             // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(112, 22);
-            this.toolStripButton3.Text = "按年级查询学生";
+            this.tsQuueryStuGrade.Image = ((System.Drawing.Image)(resources.GetObject("tsQuueryStuGrade.Image")));
+            this.tsQuueryStuGrade.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsQuueryStuGrade.Name = "tsQuueryStuGrade";
+            this.tsQuueryStuGrade.Size = new System.Drawing.Size(112, 22);
+            this.tsQuueryStuGrade.Text = "按年级查询学生";
+            this.tsQuueryStuGrade.Click += new System.EventHandler(this.tsQuueryStuGrade_Click);
             // 
-            // toolStripButton4
+            // tsShowSore
             // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(76, 22);
-            this.toolStripButton4.Text = "学生列表";
+            this.tsShowSore.Image = ((System.Drawing.Image)(resources.GetObject("tsShowSore.Image")));
+            this.tsShowSore.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsShowSore.Name = "tsShowSore";
+            this.tsShowSore.Size = new System.Drawing.Size(76, 22);
+            this.tsShowSore.Text = "查询成绩";
+            this.tsShowSore.Click += new System.EventHandler(this.tsShowSore_Click);
             // 
-            // toolStripButton1
+            // txStudentAll
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(76, 22);
-            this.toolStripButton1.Tag = "";
-            this.toolStripButton1.Text = "科目列表";
-            this.toolStripButton1.ToolTipText = "科目列表";
+            this.txStudentAll.Image = ((System.Drawing.Image)(resources.GetObject("txStudentAll.Image")));
+            this.txStudentAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.txStudentAll.Name = "txStudentAll";
+            this.txStudentAll.Size = new System.Drawing.Size(85, 22);
+            this.txStudentAll.Text = "学生列表";
+            this.txStudentAll.Click += new System.EventHandler(this.txStudentAll_Click);
             // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1123, 688);
             this.Controls.Add(this.tsAdmin);
             this.Controls.Add(this.msAdmin);
@@ -213,6 +221,7 @@ namespace My
             this.Name = "FrmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "管理员主窗体";
+            this.Load += new System.EventHandler(this.FrmAdmin_Load);
             this.msAdmin.ResumeLayout(false);
             this.msAdmin.PerformLayout();
             this.tsAdmin.ResumeLayout(false);
@@ -239,8 +248,8 @@ namespace My
         private System.Windows.Forms.ToolStrip tsAdmin;
         private System.Windows.Forms.ToolStripButton tsAddStu;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton tsQuueryStuGrade;
+        private System.Windows.Forms.ToolStripButton tsShowSore;
+        private System.Windows.Forms.ToolStripDropDownButton txStudentAll;
     }
 }
