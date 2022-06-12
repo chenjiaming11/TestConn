@@ -94,6 +94,11 @@
     <Compile Include="FrmSearchStudent1.Designer.cs">
       <DependentUpon>FrmSearchStudent1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyshoolDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyshoolDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAdmin.resx">
@@ -129,6 +134,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="MyshoolDataSet.xsc">
+      <DependentUpon>MyshoolDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MyshoolDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MyshoolDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MyshoolDataSet.xss">
+      <DependentUpon>MyshoolDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

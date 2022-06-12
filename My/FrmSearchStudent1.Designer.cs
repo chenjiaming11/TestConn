@@ -29,14 +29,20 @@ namespace My
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtname1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtname = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.myshoolDataSet = new My.MyshoolDataSet();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentTableAdapter = new My.MyshoolDataSetTableAdapters.StudentTableAdapter();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myshoolDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtname1
@@ -67,29 +73,18 @@ namespace My
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.StudentName,
-            this.StudentNo});
+            this.Column1,
+            this.StudentName});
+            this.dataGridView1.DataSource = this.studentBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(73, 67);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(391, 337);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // StudentName
-            // 
-            this.StudentName.DataPropertyName = "StudentName";
-            this.StudentName.HeaderText = "学生姓名";
-            this.StudentName.Name = "StudentName";
-            // 
-            // StudentNo
-            // 
-            this.StudentNo.DataPropertyName = "StudentNo";
-            this.StudentNo.HeaderText = "学生学号";
-            this.StudentNo.Name = "StudentNo";
-            this.StudentNo.Visible = false;
             // 
             // btnReturn
             // 
@@ -100,6 +95,32 @@ namespace My
             this.btnReturn.Text = "返回";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // myshoolDataSet
+            // 
+            this.myshoolDataSet.DataSetName = "MyshoolDataSet";
+            this.myshoolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "Student";
+            this.studentBindingSource.DataSource = this.myshoolDataSet;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "StudentNo";
+            this.Column1.HeaderText = "学号";
+            this.Column1.Name = "Column1";
+            // 
+            // StudentName
+            // 
+            this.StudentName.DataPropertyName = "StudentName";
+            this.StudentName.HeaderText = "学生姓名";
+            this.StudentName.Name = "StudentName";
             // 
             // FrmSearchStudent1
             // 
@@ -116,6 +137,8 @@ namespace My
             this.Text = "查询学生";
             this.Load += new System.EventHandler(this.FrmSearchStudent1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myshoolDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,8 +150,11 @@ namespace My
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtname;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentNo;
         private System.Windows.Forms.Button btnReturn;
+        private MyshoolDataSet myshoolDataSet;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private MyshoolDataSetTableAdapters.StudentTableAdapter studentTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
     }
 }

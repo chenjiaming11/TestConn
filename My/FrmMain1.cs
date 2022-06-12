@@ -50,26 +50,45 @@ namespace My
                 if (Login())
                 {
                     //窗体跳转 ：新建一个窗体
-                    MessageBox.Show("登录成功！");
+                   
                     //判断是管理员还是学生用户，跳转到对应得窗体、
                     if (cboLginType.Text.Equals("系统管理员"))
                     {
-                        FrmAdmin admin = new FrmAdmin();
-                        admin.Show();
+                        MessageBox.Show("登录成功！");
+                        FrmAdmin guanli = new FrmAdmin();
+                        guanli.Show(); 
                     }
                     else
-                    {   //打开学生窗体
+                    {
+                        MessageBox.Show("登录失败!");
+                    }
+
+                   this.Hide();//隐藏当前登录窗体
+
+                }
+                if (stu())
+                {
+                    
+                    //判断是管理员还是学生用户，跳转到对应得窗体、
+                    if (cboLginType.Text.Equals("学生登录"))
+                    {
+                        MessageBox.Show("登录成功！");
                         FrmStudent stu = new FrmStudent();
                         stu.Show();
                     }
+                    else
+                    {
+                        MessageBox.Show("登录失败!");
+                    }
                     this.Hide();//隐藏当前登录窗体
+                }   
 
-                }
+            }
+
                 else
                 {
                     MessageBox.Show("登录失败!");
                 }
-            }
                  }
         //登录实现
         public bool Login()
@@ -104,6 +123,38 @@ namespace My
             {
                return false;
             }             
+        }
+        public bool stu()
+        {
+            string name = txtUsername.Text.Trim();
+            string pwd = txtPwd.Text.Trim();
+            //2、访问数据库操作
+            //2-1数据库连接字符串
+            string connSting = "Data Source=.;Initial Catalog=Myshool;User ID=sa;Password=1234";
+            //2-2创建连接对象SqlConnention
+            SqlConnection conn = new SqlConnection(connSting);
+            conn.Open();
+            //准备sql语句
+            string sql = "select * from studentdl where UserName = '" + name + "'and password='" + pwd + "'";
+            //2-3创建执行对象SqlCommand
+            SqlCommand command = new SqlCommand(sql, conn);
+            //2-4执行sql语句，返回结果
+            int i = 0;
+            if (command.ExecuteScalar() != null)
+            {
+                i = (int)command.ExecuteScalar();
+            }
+            //2-6关闭连接或其他资源 
+            conn.Close();
+            //2-5处理结果
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         //非空验证
         public bool IsEmpty()
