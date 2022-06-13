@@ -98,5 +98,50 @@ namespace My
                 MessageBox.Show("修改失败！");
             }
         }
+        //点击删除，执行操作
+        private void tsmiDelete_Click(object sender, EventArgs e)
+        {
+            //1 获取学号（主键）
+            int i = dataGridView1.CurrentRow.Index;
+            string stuNo = dataGridView1.Rows[i].Cells["StudentNo"].Value.ToString();
+            string stuName = dataGridView1.Rows[i].Cells["StudentName"].Value.ToString();
+            //MessageBox.Show("准备删除"+ stuName +"的信息，学号："+ stuNo);
+            DialogResult result = MessageBox.Show("确认要删除"+ stuName +"的信息吗？同时会删除该学生的成绩！","提示信息", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                //执行修改
+                //2 删除提示；删除学生信息，连同 成绩信息一并删除
+                string connSting = "Data Source=.;Initial Catalog=Myshool;User ID=sa;Password=1234";
+                //2-2创建连接对象SqlConnention
+                SqlConnection conn = new SqlConnection(connSting);
+                conn.Open();
+                //2-1 删除成绩
+                string sqlDelScore = "delete from ResuIt where studentNo='" + stuNo + "'";
+                SqlCommand  command = new SqlCommand(sqlDelScore,conn);
+                command.ExecuteNonQuery();
+                //2-2删除学生信息
+                string sqlDelStu = "delete from student where studentNo='" + stuNo + "'";
+                command = new SqlCommand(sqlDelStu, conn);
+                int deIResult = command.ExecuteNonQuery();
+                if (deIResult > 0)
+                {
+                    MessageBox.Show("删除成功！");
+                    ShowStudentAll();//删除更新数据
+                }
+                else
+                {
+                    MessageBox.Show("删除失败！");
+                }
+            }
+
+           
+        }
+
+        private void tianjiaxuesheng_Click(object sender, EventArgs e)
+        {
+            FrmEditStudent RE = new FrmEditStudent();
+            
+            RE.Show();
+        }
     }
 }

@@ -52,6 +52,12 @@
     <Compile Include="FrmAdmin.Designer.cs">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frmchaxun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmchaxun.Designer.cs">
+      <DependentUpon>Frmchaxun.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEditStudent1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frmchaxun.resx">
+      <DependentUpon>Frmchaxun.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEditStudent1.resx">
       <DependentUpon>FrmEditStudent1.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +142,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="MyshoolDataSet.xsc">
       <DependentUpon>MyshoolDataSet.xsd</DependentUpon>
@@ -157,6 +167,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\查看-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\查看.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

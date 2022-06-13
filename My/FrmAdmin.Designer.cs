@@ -54,6 +54,7 @@ namespace My
             // 
             // msAdmin
             // 
+            this.msAdmin.BackColor = System.Drawing.Color.Aqua;
             this.msAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.账户管理ToolStripMenuItem,
             this.学生用户管理ToolStripMenuItem,
@@ -149,6 +150,7 @@ namespace My
             // 
             // tsAdmin
             // 
+            this.tsAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.tsAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsAddStu,
             this.toolStripButton2,

@@ -29,6 +29,7 @@ namespace My
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmShowStudentAll));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.StudentNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,8 +63,13 @@ namespace My
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUpdaSQL = new System.Windows.Forms.Button();
+            this.cmsRightKey = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.添加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiShowSTUDENTaLL = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.cmsRightKey.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -150,6 +156,7 @@ namespace My
             this.tianjiaxuesheng.TabIndex = 1;
             this.tianjiaxuesheng.Text = "添加学生";
             this.tianjiaxuesheng.UseVisualStyleBackColor = true;
+            this.tianjiaxuesheng.Click += new System.EventHandler(this.tianjiaxuesheng_Click);
             // 
             // xiugaibaocun
             // 
@@ -343,11 +350,40 @@ namespace My
             this.btnUpdaSQL.UseVisualStyleBackColor = true;
             this.btnUpdaSQL.Click += new System.EventHandler(this.btnUpdaSQL_Click);
             // 
+            // cmsRightKey
+            // 
+            this.cmsRightKey.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiDelete,
+            this.添加ToolStripMenuItem,
+            this.tsmiShowSTUDENTaLL});
+            this.cmsRightKey.Name = "cmsRightKey";
+            this.cmsRightKey.Size = new System.Drawing.Size(101, 70);
+            // 
+            // tsmiDelete
+            // 
+            this.tsmiDelete.Name = "tsmiDelete";
+            this.tsmiDelete.Size = new System.Drawing.Size(100, 22);
+            this.tsmiDelete.Text = "删除";
+            this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
+            // 
+            // 添加ToolStripMenuItem
+            // 
+            this.添加ToolStripMenuItem.Name = "添加ToolStripMenuItem";
+            this.添加ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.添加ToolStripMenuItem.Text = "添加";
+            // 
+            // tsmiShowSTUDENTaLL
+            // 
+            this.tsmiShowSTUDENTaLL.Name = "tsmiShowSTUDENTaLL";
+            this.tsmiShowSTUDENTaLL.Size = new System.Drawing.Size(100, 22);
+            this.tsmiShowSTUDENTaLL.Text = "修改";
+            // 
             // FrmShowStudentAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 521);
+            this.ContextMenuStrip = this.cmsRightKey;
             this.Controls.Add(this.btnUpdaSQL);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.xiugaibaocun);
@@ -361,6 +397,7 @@ namespace My
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.cmsRightKey.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -399,5 +436,9 @@ namespace My
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnUpdaSQL;
+        private System.Windows.Forms.ContextMenuStrip cmsRightKey;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDelete;
+        private System.Windows.Forms.ToolStripMenuItem 添加ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowSTUDENTaLL;
     }
 }

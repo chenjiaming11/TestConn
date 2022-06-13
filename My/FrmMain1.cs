@@ -50,46 +50,44 @@ namespace My
                 if (Login())
                 {
                     //窗体跳转 ：新建一个窗体
-                   
+                    
                     //判断是管理员还是学生用户，跳转到对应得窗体、
                     if (cboLginType.Text.Equals("系统管理员"))
                     {
                         MessageBox.Show("登录成功！");
-                        FrmAdmin guanli = new FrmAdmin();
-                        guanli.Show(); 
+                        this.Hide();//隐藏当前登录窗体  
+                        FrmAdmin admin = new FrmAdmin();
+                        admin.Show();
                     }
                     else
                     {
-                        MessageBox.Show("登录失败!");
-                    }
-
-                   this.Hide();//隐藏当前登录窗体
-
+                        MessageBox.Show("登录失败！");
+                    }                  
+                                 
                 }
                 if (stu())
                 {
                     
-                    //判断是管理员还是学生用户，跳转到对应得窗体、
                     if (cboLginType.Text.Equals("学生登录"))
                     {
                         MessageBox.Show("登录成功！");
+                        this.Hide();//隐藏当前登录窗体
                         FrmStudent stu = new FrmStudent();
                         stu.Show();
                     }
                     else
                     {
-                        MessageBox.Show("登录失败!");
+                        MessageBox.Show("登录失败！");
                     }
-                    this.Hide();//隐藏当前登录窗体
-                }   
-
-            }
-
+                    
+                }
                 else
                 {
-                    MessageBox.Show("登录失败!");
+                    MessageBox.Show("登录失败！");
                 }
-                 }
+
+            }   
+        }
         //登录实现
         public bool Login()
         {

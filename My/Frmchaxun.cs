@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace My
 {
-    public partial class FrmStudent : Form
+    public partial class Frmchaxun : Form
     {
-        public FrmStudent()
+        public Frmchaxun()
         {
             InitializeComponent();
         }
 
-        private void toolStripckcj_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-            Frmchaxun cx = new Frmchaxun();
-            cx.Show();
-        }
 
-        private void tsmtc_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
